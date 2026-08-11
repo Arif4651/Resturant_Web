@@ -1,47 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronDown, MapPin, Film, Image as ImageIcon, Sparkles } from 'lucide-react'
+import { ChevronDown, MapPin, Film, Image as ImageIcon } from 'lucide-react'
 import './Hero.css'
 
 const heroSlides = [
-  {
-    type: 'video',
-    src: 'https://assets.mixkit.co/videos/preview/mixkit-rooftop-restaurant-in-the-city-at-night-42861-large.mp4',
-    poster: '/images/hero/hero-poster.jpg',
-    label: '4K City Lights'
-  },
-  {
-    type: 'video',
-    src: 'https://assets.mixkit.co/videos/preview/mixkit-candles-and-decorations-on-a-restaurant-table-42860-large.mp4',
-    poster: '/images/gallery/unn11amed.jpg',
-    label: '4K Candlelight'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=90',
-    label: '4K Rooftop Evening'
-  },
-  {
-    type: 'image',
-    src: 'https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=2000&q=90',
-    label: '4K Garden Atmosphere'
-  },
-  {
-    type: 'image',
-    src: '/images/gallery/unname8d.jpg',
-    label: 'HAWA Daytime'
-  },
-  {
-    type: 'video',
-    src: '/video/videoplayback.mp4',
-    poster: '/images/hero/hero-poster.jpg',
-    label: 'HAWA Original Video'
-  }
+  { type: 'video', src: '/video/videoplayback.mp4', poster: '/images/hero/hero-poster.jpg' },
+  { type: 'image', src: '/images/gallery/unname8d.jpg', label: 'Rooftop Garden' },
+  { type: 'image', src: '/images/gallery/unn11amed.jpg', label: 'Night Dining' },
+  { type: 'image', src: '/images/gallery/unnamed9.jpg', label: 'Rooftop Boat' },
+  { type: 'image', src: '/images/gallery/unnam3ed.jpg', label: 'Interior Elegance' },
 ]
 
 export default function Hero() {
   const heroRef = useRef(null)
-  const videoRef = useRef(null)
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
 
   const activeSlide = heroSlides[activeSlideIndex]
@@ -53,21 +24,6 @@ export default function Hero() {
     els.forEach((el, i) => {
       el.style.animationDelay = `${0.2 + i * 0.12}s`
     })
-
-    const handleScroll = () => {
-      if (!heroRef.current) return
-      const scrollY = window.scrollY
-      const heroH = heroRef.current.offsetHeight
-      if (scrollY < heroH) {
-        const progress = scrollY / heroH
-        if (videoRef.current) {
-          videoRef.current.style.transform = `scale(${1 + progress * 0.05}) translateY(${scrollY * 0.2}px)`
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const scrollToContent = () => {
@@ -82,8 +38,6 @@ export default function Hero() {
       <div className="hero__media">
         {activeSlide.type === 'video' ? (
           <video
-            key={activeSlide.src}
-            ref={videoRef}
             className="hero__video"
             autoPlay
             muted
@@ -96,7 +50,6 @@ export default function Hero() {
           </video>
         ) : (
           <img
-            key={activeSlide.src}
             src={activeSlide.src}
             alt={activeSlide.label}
             className="hero__image-slide"
@@ -143,19 +96,16 @@ export default function Hero() {
 
       {/* Hero Atmosphere Switcher */}
       <div className="hero__slide-switcher" aria-label="Switch hero atmosphere">
-        <span className="hero__switcher-tag">
-          <Sparkles size={11} /> 4K Media
-        </span>
         {heroSlides.map((slide, idx) => (
           <button
             key={idx}
             className={`hero__slide-dot ${activeSlideIndex === idx ? 'hero__slide-dot--active' : ''}`}
             onClick={() => setActiveSlideIndex(idx)}
-            title={`Switch to ${slide.label}`}
+            title={slide.type === 'video' ? 'Play Video Atmosphere' : `View ${slide.label}`}
           >
             {slide.type === 'video' ? <Film size={12} /> : <ImageIcon size={12} />}
             <span className="hero__slide-dot-label">
-              {slide.label}
+              {slide.type === 'video' ? 'Video' : slide.label}
             </span>
           </button>
         ))}
