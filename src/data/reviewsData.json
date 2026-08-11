@@ -1,0 +1,44 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Rafiul Islam",
+      "rating": 5,
+      "text": "Amazing rooftop experience! The ambience is absolutely stunning with all the greenery and beautiful lighting. The Hawa Special Pizza was delicious. Perfect place for a romantic dinner.",
+      "source": "Google",
+      "isVisible": true
+    },
+    {
+      "id": 2,
+      "name": "Fatema Akter",
+      "rating": 4,
+      "text": "Went there for a family gathering and everyone loved it. The rooftop view is breathtaking, especially during sunset. Hyderabadi Biryani was on point. Will definitely visit again.",
+      "source": "Google",
+      "isVisible": true
+    },
+    {
+      "id": 3,
+      "name": "Tanvir Ahmed",
+      "rating": 4,
+      "text": "One of the best rooftop restaurants in Mirpur area. The decoration is very creative and the food quality is great. BBQ Koral was the highlight of our evening.",
+      "source": "Google",
+      "isVisible": true
+    },
+    {
+      "id": 4,
+      "name": "Nusrat Jahan",
+      "rating": 5,
+      "text": "The Hawa Blue Rainbow mocktail is a must try! Beautiful place with amazing vibes. The boat structure on the rooftop is so unique. Great for photos and celebrations.",
+      "source": "Google",
+      "isVisible": true
+    },
+    {
+      "id": 5,
+      "name": "Shahriar Kabir",
+      "rating": 4,
+      "text": "Visited with friends on a weekend evening. The atmosphere is really peaceful despite being in Mirpur. Good food, reasonable prices, and the open-air seating is lovely.",
+      "source": "Google",
+      "isVisible": true
+    }
+  ]
+}

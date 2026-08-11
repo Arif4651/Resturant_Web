@@ -1,0 +1,16 @@
+{
+  "images": [
+    { "id": 1, "src": "/images/gallery/unnamed.jpg", "alt": "HAWA Rooftop building exterior during golden hour", "category": "Rooftop", "caption": "Golden hour at HAWA", "isVisible": true, "sortOrder": 1 },
+    { "id": 2, "src": "/images/gallery/unn1amed.jpg", "alt": "HAWA illuminated sign with bamboo backdrop at night", "category": "Evening", "caption": "The iconic HAWA entrance", "isVisible": true, "sortOrder": 2 },
+    { "id": 3, "src": "/images/gallery/unna6med.jpg", "alt": "HAWA outdoor seating area with lush greenery", "category": "Rooftop", "caption": "Green surroundings and fresh air", "isVisible": true, "sortOrder": 3 },
+    { "id": 4, "src": "/images/gallery/unna77med.jpg", "alt": "Premium glass globe chandelier inside HAWA", "category": "Interior", "caption": "Premium interior details", "isVisible": true, "sortOrder": 4 },
+    { "id": 5, "src": "/images/gallery/unnam3ed.jpg", "alt": "HAWA interior dining hall with guitar-shaped ceiling light", "category": "Interior", "caption": "A dining space like no other", "isVisible": true, "sortOrder": 5 },
+    { "id": 6, "src": "/images/gallery/unnam4ed.jpg", "alt": "HAWA garden entrance with Bangla logo and greenery at night", "category": "Evening", "caption": "Nature meets dining", "isVisible": true, "sortOrder": 6 },
+    { "id": 7, "src": "/images/gallery/unname5d.jpg", "alt": "HAWA Bangla neon sign at night with string lights", "category": "Evening", "caption": "Nights at HAWA", "isVisible": true, "sortOrder": 7 },
+    { "id": 8, "src": "/images/gallery/unname7d.jpg", "alt": "Artistic bamboo lantern cluster ceiling installation", "category": "Interior", "caption": "Handcrafted details everywhere", "isVisible": true, "sortOrder": 8 },
+    { "id": 9, "src": "/images/gallery/unname8d.jpg", "alt": "HAWA rooftop outdoor seating with pergola and greenery", "category": "Rooftop", "caption": "Dine under open sky", "isVisible": true, "sortOrder": 9 },
+    { "id": 10, "src": "/images/gallery/unnamed9.jpg", "alt": "Unique boat installation on HAWA rooftop with palm trees", "category": "Rooftop", "caption": "The HAWA signature boat", "isVisible": true, "sortOrder": 10 },
+    { "id": 11, "src": "/images/gallery/unn11amed.jpg", "alt": "Night dining scene with trees lanterns and V-shaped lights", "category": "Evening", "caption": "Evening magic unfolds", "isVisible": true, "sortOrder": 11 }
+  ],
+  "categories": ["All", "Rooftop", "Interior", "Evening", "Moments"]
+}

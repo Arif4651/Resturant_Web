@@ -1,0 +1,193 @@
+.sig__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.sig__card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.sig--visible .sig__card {
+  animation: sigCardReveal var(--duration-editorial) var(--ease-out-expo) forwards;
+}
+
+@keyframes sigCardReveal {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sig__card:hover {
+  border-color: var(--color-border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Card Image ────────────────────────────── */
+.sig__card-image-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: var(--color-bg-elevated);
+}
+
+.sig__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.sig__card:hover .sig__card-img {
+  transform: scale(1.08);
+}
+
+.sig__card-badges {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.sig__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 9px;
+  font-size: 0.65rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  backdrop-filter: var(--blur-sm);
+}
+
+.sig__badge--popular {
+  background: hsla(30, 80%, 55%, 0.95);
+  color: var(--color-charcoal);
+}
+
+.sig__badge--spicy {
+  background: hsla(0, 70%, 50%, 0.9);
+  color: white;
+}
+
+.sig__badge--veg {
+  background: hsla(140, 60%, 40%, 0.9);
+  color: white;
+}
+
+/* ── Card Body ─────────────────────────────── */
+.sig__card-body {
+  padding: var(--space-5);
+}
+
+.sig__card-category {
+  font-family: var(--font-body);
+  font-size: var(--text-overline);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-amber);
+  opacity: 0.8;
+}
+
+.sig__card-name {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-heading);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-1);
+  transition: color var(--duration-normal) ease;
+}
+
+.sig__card:hover .sig__card-name {
+  color: var(--color-amber);
+}
+
+.sig__card-serving {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+.sig__card-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.sig__card-price {
+  font-family: var(--font-body);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-cream);
+}
+
+.sig__card-price-l {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+/* ── CTA ───────────────────────────────────── */
+.sig__cta-wrap {
+  text-align: center;
+  margin-top: var(--space-12);
+}
+
+.sig__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-10);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-amber);
+  border: 1px solid var(--color-amber);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.sig__cta:hover {
+  background: var(--color-amber);
+  color: var(--color-charcoal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 1024px) {
+  .sig__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sig__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .sig__card-image-wrap {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sig__grid {
+    grid-template-columns: 1fr;
+  }
+}

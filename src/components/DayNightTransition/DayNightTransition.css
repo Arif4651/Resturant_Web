@@ -1,0 +1,100 @@
+.daynight {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.daynight__images {
+  position: absolute;
+  inset: 0;
+}
+
+.daynight__day,
+.daynight__night {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.daynight__night {
+  opacity: 0;
+  transition: opacity 0.05s linear;
+}
+
+.daynight__overlay {
+  position: absolute;
+  inset: 0;
+  background: hsla(0, 0%, 0%, 0.5);
+}
+
+.daynight__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.daynight__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--weight-light);
+  color: var(--color-white);
+  line-height: var(--leading-snug);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.daynight__subtitle {
+  font-size: var(--text-body);
+  color: hsla(0, 0%, 100%, 0.7);
+  max-width: 480px;
+  margin: 0 auto var(--space-10);
+}
+
+.daynight__times {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.daynight__time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6);
+  background: hsla(0, 0%, 0%, 0.3);
+  backdrop-filter: var(--blur-sm);
+  border-radius: var(--radius-lg);
+  border: 1px solid hsla(255, 255%, 255%, 0.1);
+}
+
+.daynight__time-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-white);
+}
+
+.daynight__time-desc {
+  font-size: var(--text-caption);
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+@media (max-width: 768px) {
+  .daynight {
+    min-height: 70vh;
+  }
+
+  .daynight__times {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+}

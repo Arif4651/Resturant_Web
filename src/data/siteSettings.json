@@ -1,0 +1,41 @@
+{
+  "restaurantName": "HAWA",
+  "fullName": "HAWA Rooftop",
+  "tagline": "Above the city. Away from the ordinary.",
+  "shortDescription": "Food, breeze and unforgettable rooftop moments in the heart of Mirpur.",
+  "brandConcept": "Taste Above the City",
+  "phone": "+880 1XXX-XXXXXX",
+  "secondaryPhone": "",
+  "email": "info@hawarooftop.com",
+  "address": {
+    "full": "Level-6, Plot-12, Road-2, Block-A, Mirpur-12, Dhaka",
+    "short": "Mirpur-12, Dhaka",
+    "landmark": "Beside Pallabi Metro Station"
+  },
+  "googleMapsUrl": "https://www.google.com/maps/search/HAWA+Rooftop+Mirpur+12+Dhaka",
+  "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.0!2d90.3667!3d23.8223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ5JzIwLjMiTiA5MMKwMjInMDAuMSJF!5e0!3m2!1sen!2sbd!4v1",
+  "social": {
+    "facebook": "https://www.facebook.com/hawarooftopbd",
+    "instagram": "https://www.instagram.com/hawarooftopbd",
+    "instagramHandle": "@hawarooftopbd"
+  },
+  "openingHours": {
+    "daily": "12:00 PM – 11:00 PM",
+    "friday": "1:00 PM – 11:00 PM",
+    "note": "Open 7 days a week"
+  },
+  "googleRating": {
+    "score": 4.0,
+    "totalReviews": 1000,
+    "label": "1,000+ reviews"
+  },
+  "features": {
+    "reservationEnabled": true,
+    "deliveryEnabled": false
+  },
+  "seo": {
+    "title": "HAWA Rooftop | Rooftop Restaurant in Mirpur, Dhaka",
+    "description": "Experience premium rooftop dining at HAWA — food, breeze and unforgettable moments above Mirpur-12, Dhaka. Reserve your table today.",
+    "keywords": "HAWA Rooftop, rooftop restaurant Dhaka, Mirpur restaurant, rooftop dining, HAWA Mirpur-12"
+  }
+}
