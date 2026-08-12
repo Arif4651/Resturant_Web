@@ -13,10 +13,24 @@ export default function MenuItemModal({ item, categoryName, onClose }) {
       if (e.key === 'Escape') onClose()
     }
     document.addEventListener('keydown', handleKeyDown)
-    document.body.style.overflow = 'hidden'
+
+    // Plain `overflow: hidden` on body doesn't reliably block background
+    // scroll on iOS Safari, letting the page scroll underneath the fixed
+    // modal. Pinning the body in place at its current scroll offset does.
+    const scrollY = window.scrollY
+    const { body } = document
+    body.style.position = 'fixed'
+    body.style.top = `-${scrollY}px`
+    body.style.left = '0'
+    body.style.right = '0'
+
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = ''
+      body.style.position = ''
+      body.style.top = ''
+      body.style.left = ''
+      body.style.right = ''
+      window.scrollTo(0, scrollY)
     }
   }, [onClose])
 
@@ -41,26 +55,27 @@ export default function MenuItemModal({ item, categoryName, onClose }) {
             src={item.image}
             alt={item.name}
             className="menu-modal__header-img"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
           <div className="menu-modal__header-overlay" />
           <div className="menu-modal__badges">
             {item.isPopular && (
-              <span className="sig__badge sig__badge--popular">
+              <span className="menu-modal__badge menu-modal__badge--popular">
                 <Star size={12} /> Popular
               </span>
             )}
             {item.isSpicy && (
-              <span className="sig__badge sig__badge--spicy">
+              <span className="menu-modal__badge menu-modal__badge--spicy">
                 <Flame size={12} /> Spicy
               </span>
             )}
             {item.isVegetarian && (
-              <span className="sig__badge sig__badge--veg">
+              <span className="menu-modal__badge menu-modal__badge--veg">
                 <Leaf size={12} /> Veg
               </span>
             )}
             {item.isChefChoice && (
-              <span className="sig__badge sig__badge--popular" style={{ background: 'var(--color-forest)', color: 'var(--color-amber)' }}>
+              <span className="menu-modal__badge menu-modal__badge--chef">
                 <Sparkles size={12} /> Chef's Choice
               </span>
             )}

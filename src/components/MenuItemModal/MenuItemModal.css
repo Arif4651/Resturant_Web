@@ -67,12 +67,14 @@
   height: 240px;
   overflow: hidden;
   background: var(--color-bg-elevated);
+  flex-shrink: 0;
 }
 
 .menu-modal__header-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center;
 }
 
 .menu-modal__header-overlay {
@@ -89,6 +91,39 @@
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
+}
+
+.menu-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 9px;
+  font-size: 0.65rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  backdrop-filter: var(--blur-sm);
+}
+
+.menu-modal__badge--popular {
+  background: hsla(30, 80%, 55%, 0.95);
+  color: var(--color-charcoal);
+}
+
+.menu-modal__badge--spicy {
+  background: hsla(0, 70%, 50%, 0.9);
+  color: white;
+}
+
+.menu-modal__badge--veg {
+  background: hsla(140, 60%, 40%, 0.9);
+  color: white;
+}
+
+.menu-modal__badge--chef {
+  background: var(--color-forest);
+  color: var(--color-amber);
 }
 
 .menu-modal__body {
@@ -176,4 +211,52 @@
 .menu-modal__btn-reserve:hover {
   background: var(--color-amber-light);
   box-shadow: var(--shadow-glow);
+}
+
+/* ── Modal Responsive ──────────────────────── */
+@media (max-width: 768px) {
+  .menu-modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .menu-modal__content {
+    max-width: 100%;
+    width: 100%;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    max-height: 92dvh;
+    overflow-y: auto;
+  }
+
+  .menu-modal__header-img-wrap {
+    height: 200px;
+  }
+
+  .menu-modal__body {
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .menu-modal__title {
+    font-size: var(--text-h3);
+  }
+
+  .menu-modal__price-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .menu-modal__btn-reserve {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-modal__header-img-wrap {
+    height: 170px;
+  }
 }

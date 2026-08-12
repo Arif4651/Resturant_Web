@@ -177,7 +177,7 @@ export default function MenuPage() {
                             src={item.image}
                             alt={item.name}
                             className="menu-page__item-thumb"
-                            loading="lazy"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                           />
                         </div>
 

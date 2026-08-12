@@ -60,7 +60,6 @@ body {
   background: var(--color-amber-dark);
 }
 
-/* ── Base Elements ─────────────────────────── */
 img,
 video {
   max-width: 100%;
